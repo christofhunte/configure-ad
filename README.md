@@ -96,7 +96,7 @@ In the DC-1 server I disabled the Windows Firewall so that I can test connectivi
 <img src="https://i.imgur.com/cejX7jx.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Next step was to add new inbound and outbound security rules to the Network security group of both Virtual Machines so that I will be able to override the deafult security rules with a higher priority one. This will enable to to set Client-1's DNS settings to DC-1's Private IP.
+Next step was to add new inbound and outbound security rules to the Network security group of both Virtual Machines so that I will be able to override the deafult security rules with a higher priority one. This will enable to to set Client-1's DNS settings to DC-1's Private IP. I then restarted DC-1 and Client-1 virtual machines in the Azure Portal.
 </p>
 <br />
 
@@ -104,7 +104,55 @@ Next step was to add new inbound and outbound security rules to the Network secu
 <img src="https://i.imgur.com/EnEBImq.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-In the DNS settings of CLient-1's VM on the Azure portal, I set it to DC-1's Private IP address.
+In the DNS settings of CLient-1's VM on the Azure portal, I set it to DC-1's Private IP address. I then restarted the Client-1 virtual machine in the Azure Portal.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/2IY0xfZ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/2nAeW6w.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/RHBIXbF.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Next I logged into the Client-1 virtual machine and attempted to ping DC-1's private IP address in PowerShell. After ensuring the ping succeeded I ran "ipconfig /all" to see if the output for the DNS settings would show DC-1's private IP.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/TEvZy0T.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/YYyDlZp.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/FvxORVA.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+I then logged into DC-1 virtual machine and installed Active Directory Domain Services.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/GLe1mFa.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/aPpIHrs.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/nWUqtnP.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Next step was to promote DC-1 to a domain controller. Afterwards I set up a new forest as "mydomain.com".
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/9z84LFl.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+I then restarted DC-1 and logged back in as user: "mydomain.com\chlabuser".
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/wEvIevL.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/IBV3MUV.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/CWC8dEQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+In Active Directory Users and Computers, I created an Organizational Unit called “_EMPLOYEES” and another called  “_ADMINS”. I then created a new employee named “Jane Doe” with the username of “jane_admin” and same password used for both virtual machines. I then added jane_admin to the “Domain Admins” Security Group. 
 </p>
 <br />
 
