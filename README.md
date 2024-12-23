@@ -102,7 +102,7 @@ In the DC-1 server I disabled the Windows Firewall so that I can test connectivi
 <img src="https://i.imgur.com/cejX7jx.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Next step was to add new inbound and outbound security rules to the Network security group of both Virtual Machines so that I will be able to override the deafult security rules with a higher priority one. This will enable to to set Client-1's DNS settings to DC-1's Private IP. I then restarted DC-1 and Client-1 virtual machines in the Azure Portal.
+Next step was to add new inbound and outbound security rules to the Network security group of both Virtual Machines so that I will be able to override the deafult security rules with a higher priority one. This will enable me to set Client-1's DNS settings to DC-1's Private IP. I then restarted DC-1 and Client-1 virtual machines in the Azure Portal.
 </p>
 <br />
 
