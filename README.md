@@ -152,14 +152,36 @@ I then restarted DC-1 and logged back in as user: "mydomain.com\chlabuser".
 <img src="https://i.imgur.com/CWC8dEQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-In Active Directory Users and Computers, I created an Organizational Unit called “_EMPLOYEES” and another called  “_ADMINS”. I then created a new employee named “Jane Doe” with the username of “jane_admin” and same password used for both virtual machines. I then added jane_admin to the “Domain Admins” Security Group. 
+In Active Directory Users and Computers, I created an Organizational Unit called “_EMPLOYEES” and another called  “_ADMINS”. I then created a new employee named “Jane Doe” with the username of “jane_admin” and same password used for both virtual machines. I then added jane_admin to the “Domain Admins” Security Group. I then logged out of the Domain Controller and will be using “mydomain.com\jane_admin" from now on to log in as an administrator.
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/PxtXuKn.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/Gh175x4.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+The next step was to log into the Client-1 vm as the original local admin (chlabuser) and join to to the domain contoller. The computer restarted afterwards. Next I Logged into the Domain Controller and verified the Client-1 shows up in Active Directory Users and Computers. Aftwerwards I Created a new OU named “_CLIENTS” and dragged Client-1 into it.
 </p>
 <br />
+
+<p>
+<img src="https://i.imgur.com/Kn80Mcq.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+I logged into Client-1 as mydomain.com\jane_admin, opened "Remote Desktop" in system properties, and gave "domain users" access to remote desktop. This will allow me to now log into Client-1 as a normal, non-administrative user.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/IRdJENU.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/J2FeCHt.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/uGf0Vyw.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/5Tb3Lm8.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+I logged into DC-1 as jane_admin, opened PowerShell_ise as an administrator, created a new file and ran a script that created a bunch of user accounts in the "_EMPLOYEES" Organizational Unit. I then took one of the random user accounts and logged into Client-1 with that user account and the new password I created in the script.
+</p>
+<br />
+
+
