@@ -71,10 +71,40 @@ I set Domain Controller’s NIC Private IP address to be static so that when I s
 <br />
 
 <p>
-<img src="https://i.imgur.com/W34r5bK.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/Z1xJJM1.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/UUsdkQC.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/SFb3rhZ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-I set Domain Controller’s NIC Private IP address to be static so that when I set Client-1's DNS settings to DC-1's private IP address, there wouldn't be any change which would cause confusion later navigating client-1's server.
+Next step was to copy DC-1's public IP address and log into the server with remote desktop (Microsoft Remote Desktop).
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/AeTxEVf.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/8a9RxPi.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+In the DC-1 server I disabled the Windows Firewall so that I can test connectivity betwwen the two virtual machines.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/QNE7zoD.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/n6zA9LD.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/9Yyheue.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/cejX7jx.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Next step was to add new inbound and outbound security rules to the Network security group of both Virtual Machines so that I will be able to override the deafult security rules with a higher priority one. This will enable to to set Client-1's DNS settings to DC-1's Private IP.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/EnEBImq.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+In the DNS settings of CLient-1's VM on the Azure portal, I set it to DC-1's Private IP address.
 </p>
 <br />
 
