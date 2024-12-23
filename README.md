@@ -184,4 +184,66 @@ I logged into DC-1 as jane_admin, opened PowerShell_ise as an administrator, cre
 </p>
 <br />
 
+<p>
+<img src="https://i.imgur.com/R3yDFHV.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/zOXRqEd.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+I opened Group Policy Management Editor in DC-1 and changed the account lockout policies such as initiating an account lockout after 5 invalid attempts, allowing administrator account lockout, setting the account lockout duration to 30 minutes.I then opened "Command Prompt" in Windows and initiated a gpudate /force.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/vOfFumk.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/aciiDiK.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+I then attempted to log into Client-1 with the random user account and deliberate incorrect passwords. After 5 attempts my account was locked since I set the parameters in the GPO to do that.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/Q7rWrDn.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/scgBbC2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+I logged into DC-1 as jane_admin and observed the account was locked and then I unlocked it all within the Active Directory.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/Q7rWrDn.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/scgBbC2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+I logged into DC-1 as jane_admin and observed the account was locked and then I unlocked it all within the Active Directory. I attempted to login again and it worked.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/eJXTjTk.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/IQz9A1F.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/Y04yBGc.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/GkRQBP0.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+I stayed in the Active Directory and disabled the same account. I attempted to login and I saw the error message. I then re-enabled the account in the Active Directory and successfully logged in.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/KPIGulK.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+I reset the password of the same user within the Active Directory.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/WXrNyse.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Finally I used the Event Viewer to observe the logs in the Domain Controller and client machine. 
+</p>
+<br />
 
