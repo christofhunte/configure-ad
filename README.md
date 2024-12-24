@@ -36,7 +36,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <img src="https://i.imgur.com/Z6rVp93.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-First step I did was create a Resource Group in Azure and titled it "Active-Directory-Lab".
+The first step I did was creating a Resource Group in Azure and titled it "Active-Directory-Lab".
 </p>
 <br />
 
@@ -44,7 +44,7 @@ First step I did was create a Resource Group in Azure and titled it "Active-Dire
 <img src="https://i.imgur.com/cRjq0oK.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Next step I did was create a virtual network and subnet for the virtual machines to run on. I placed the virtual network in the the Resource Group I created.
+The next step I did was creating a virtual network and subnet for the virtual machines to run on. I placed the virtual network in the the Resource Group I created.
 </p>
 <br />
 
@@ -82,7 +82,7 @@ I set Domain Controller’s NIC Private IP address to be static so that when I s
 <img src="https://i.imgur.com/SFb3rhZ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Next step was to copy DC-1's public IP address and log into the server with remote desktop (Microsoft Remote Desktop).
+The next step was to copy DC-1's public IP address and log into the server with remote desktop (Microsoft Remote Desktop).
 </p>
 <br />
 
@@ -102,7 +102,7 @@ In the DC-1 server I disabled the Windows Firewall so that I can test connectivi
 <img src="https://i.imgur.com/cejX7jx.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Next step was to add new inbound and outbound security rules to the Network security group of both Virtual Machines so that I will be able to override the deafult security rules with a higher priority one. This will enable me to set Client-1's DNS settings to DC-1's Private IP. I then restarted DC-1 and Client-1 virtual machines in the Azure Portal.
+The next step was to add new inbound and outbound security rules to the Network security group of both Virtual Machines so that I will be able to override the deafult security rules with a higher priority one. This will enable me to set Client-1's DNS settings to DC-1's Private IP. I then restarted DC-1 and Client-1 virtual machines in the Azure Portal.
 </p>
 <br />
 
