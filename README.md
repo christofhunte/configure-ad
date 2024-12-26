@@ -64,7 +64,7 @@ I then created a virtual machine for the domain controller and titled it "dc-1".
 <img src="https://i.imgur.com/zohJrYl.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-I created another virtul machine for the client titled "client-1". I gave it the same Username and password as "dc-1" for lab purposes. I attached it to the same virtual network and resource group as "dc-1" and used Windows 10 (22H2) for the image.
+I created another virtul machine for the client titled "client-1". I gave it the same username and password as "dc-1" for lab purposes. I attached it to the same virtual network and resource group as "dc-1" and used Windows 10 (22H2) for the image.
 </p>
 <br />
 
@@ -167,7 +167,7 @@ In Active Directory Users and Computers, I created an Organizational Unit called
 <img src="https://i.imgur.com/Gh175x4.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-The next step was to log into the Client-1 vm as the original local admin (chlabuser) and join to to the domain contoller. The computer restarted afterwards. Next I Logged into the Domain Controller and verified the Client-1 shows up in Active Directory Users and Computers. Aftwerwards I Created a new OU named “_CLIENTS” and dragged Client-1 into it.
+The next step was to log into the Client-1 vm as the original local admin (chlabuser) and join to the domain contoller. The computer restarted afterwards. Next I Logged into the Domain Controller and verified the Client-1 shows up in Active Directory Users and Computers. Aftwerwards I Created a new OU named “_CLIENTS” and dragged Client-1 into it.
 </p>
 <br />
 
@@ -208,14 +208,6 @@ I then attempted to log into Client-1 with the random user account and deliberat
 </p>
 <br />
 
-<p>
-<img src="https://i.imgur.com/Q7rWrDn.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<img src="https://i.imgur.com/scgBbC2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-I logged into DC-1 as jane_admin and observed the account was locked and then I unlocked it all within the Active Directory.
-</p>
-<br />
 
 <p>
 <img src="https://i.imgur.com/Q7rWrDn.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
